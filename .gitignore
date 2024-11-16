@@ -1,0 +1,63 @@
+# Prerequisites
+*.d
+
+# folder
+cmake-build-*/
+build/
+
+# 忽略doxygen产生的文件夹
+html/
+latex/
+
+# antlr插件安装后会自动产生文件夹，忽略
+.antlr/
+
+# 忽略tests下的文件
+tests/
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# inner files
+ir.txt
+ast.png
+asm.s
+
+# history
+.history
+
+# clion
+.idea/
+
+# Visual Studio
+.vs/
+
+# VSCodeCounters
+.VSCodeCounter/

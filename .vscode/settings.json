@@ -1,0 +1,228 @@
+{
+	"tabnine.experimentalAutoImports": true,
+	"editor.fontFamily": "'FiraCode NFM',monospace,'Courier New',Menlo,Monaco",
+	"editor.fontLigatures": true,
+	"editor.linkedEditing": true,
+	"editor.formatOnType": true,
+	"editor.tabSize": 4,
+	"editor.formatOnPaste": true,
+	"editor.fontVariations": false,
+	"editor.detectIndentation": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"git.enableSmartCommit": true,
+	"git.confirmSync": false,
+	"git.autofetch": true,
+	"git.ignoreLimitWarning": true,
+	"gitlens.hovers.currentLine.over": "line",
+	"gitlens.defaultDateFormat": null,
+	"gitlens.graph.layout": "editor",
+	"gitlens.gitCommands.skipConfirmations": ["fetch:command", "switch:command", "push:command"],
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.colorTheme": "Monokai",
+	"plantuml.server": "http://10.69.45.39:38880",
+	"plantuml.render": "PlantUMLServer",
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter-notebook",
+		"*.pdf": "latex-workshop-pdf-hook"
+	},
+	"vsicons.dontShowNewVersionMessage": true,
+	"todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]"],
+	"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+	"go.useLanguageServer": true,
+	"go.toolsManagement.autoUpdate": true,
+	"[go]": {
+		"editor.snippetSuggestions": "none",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		}
+	},
+	"gopls": {
+		"usePlaceholders": true,
+		"completionDocumentation": true
+	},
+	"cmake.buildDirectory": "${workspaceFolder}/cmake-build-debug",
+	"cmake.configureOnOpen": false,
+	"cmake.generator": "Ninja",
+	"debug.allowBreakpointsEverywhere": true,
+	"security.workspace.trust.untrustedFiles": "open",
+	"latex-workshop.latex.recipes": [
+		{
+			"name": "xelatex",
+			"tools": ["xelatex"]
+		},
+		{
+			"name": "xelatex -> bibtex -> xelatex*2",
+			"tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
+		}
+	],
+	"latex-workshop.latex.tools": [
+		{
+			"name": "latexmk",
+			"command": "latexmk",
+			"args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-pdf", "%DOC%"]
+		},
+		{
+			"name": "xelatex",
+			"command": "xelatex",
+			"args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"]
+		},
+		{
+			"name": "bibtex",
+			"command": "bibtex",
+			"args": ["%DOCFILE%"]
+		}
+	],
+	"latex-workshop.latex.clean.fileTypes": [
+		"*.aux",
+		"*.bbl",
+		"*.blg",
+		"*.idx",
+		"*.ind",
+		"*.lof",
+		"*.lot",
+		"*.out",
+		"*.toc",
+		"*.acn",
+		"*.acr",
+		"*.alg",
+		"*.glg",
+		"*.glo",
+		"*.gls",
+		"*.ist",
+		"*.fls",
+		"*.log",
+		"*.fdb_latexmk",
+		"*.synctex.gz"
+	],
+	"docker.contexts.label": "DockerEndpoint",
+	"[python]": {
+		"editor.tabSize": 4
+	},
+	"explorer.confirmDelete": false,
+	"terminal.integrated.profiles.windows": {
+		"clang64": {
+			"path": "C:/ToolsApp/msys64/msys2_shell.cmd",
+			"args": ["-defterm", "-clang64", "-no-start", "-here", "-shell", "zsh"]
+		},
+		"PowerShell": {
+			"source": "PowerShell",
+			"icon": "terminal-powershell"
+		},
+		"Command Prompt": {
+			"path": ["${env:windir}\\Sysnative\\cmd.exe", "${env:windir}\\System32\\cmd.exe"],
+			"args": [],
+			"icon": "terminal-cmd"
+		}
+	},
+	"terminal.integrated.defaultProfile.windows": "Command Prompt",
+	"terminal.integrated.enableMultiLinePasteWarning": "auto",
+	"terminal.external.osxExec": "iTerm.app",
+	"terminal.integrated.defaultProfile.osx": "zsh",
+	"terminal.integrated.fontSize": 14,
+	"lldb.suppressUpdateNotifications": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"update.showReleaseNotes": false,
+	"[vue]": {
+		"editor.defaultFormatter": "Vue.volar",
+		"editor.tabSize": 2
+	},
+	"eslint.quiet": true,
+	"eslint.workingDirectories": [
+		".eslintrc.js",
+		{
+			"mode": "auto"
+		}
+	],
+	"eslint.validate": ["javascript", "javascriptreact", "vue"],
+	"vetur.validation.template": false,
+	"vetur.ignoreProjectWarning": true,
+	"vetur.format.defaultFormatter.js": "vscode-typescript",
+	"vetur.format.defaultFormatter.html": "js-beautify-html",
+	"vetur.format.defaultFormatterOptions": {
+		"js-beautify-html": {
+			"wrap_line_length": 80,
+			"wrap_attributes": "force-aligned"
+		}
+	},
+	"typescript.preferences.quoteStyle": "single",
+	"typescript.format.insertSpaceAfterConstructor": true,
+	"typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+	"[typescript]": {
+		"editor.tabSize": 2
+	},
+	"[json]": {
+		"editor.tabSize": 2,
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[css]": {
+		"editor.tabSize": 2
+	},
+	"javascript.preferences.quoteStyle": "single",
+	"javascript.format.insertSpaceAfterConstructor": true,
+	"javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features",
+		"editor.tabSize": 2
+	},
+	"html.format.wrapAttributes": "force-expand-multiline",
+	"[html]": {
+		"editor.tabSize": 2
+	},
+	"prettier.vueIndentScriptAndStyle": true,
+	"prettier.semi": true,
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true,
+	"prettier.printWidth": 100,
+	"git.openRepositoryInParentFolders": "always",
+	"cmake.options.statusBarVisibility": "visible",
+	"cmake.options.advanced": {
+		"build": {
+			"statusBarVisibility": "visible"
+		},
+		"launch": {
+			"statusBarVisibility": "visible"
+		},
+		"debug": {
+			"statusBarVisibility": "visible"
+		}
+	},
+	"cmake.showOptionsMovedNotification": false,
+	"editor.insertSpaces": false,
+	"editor.formatOnSave": true,
+	"python.languageServer": "Pylance",
+	"clang-format.executable": "clang-format",
+	"clang-format.style": "file",
+	"clang-format.fallbackStyle": "LLVM",
+	"[cpp]": {
+		"editor.defaultFormatter": "xaver.clang-format"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"markdown.copyFiles.destination": {
+		"*.md": "figs/${documentBaseName}-${fileName}"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+	},
+	"pangu.auto_format_on_save": true,
+	"markdown-preview-enhanced.codeBlockTheme": "github-dark.css",
+	"markdown-preview-enhanced.previewTheme": "one-dark.css",
+	"markdown-preview-enhanced.imageFolderPath": "/figs",
+	"markdownlint.focusMode": false,
+	"markdownlint.run": "onType",
+	"editor.fontSize": 16,
+	"editor.guides.bracketPairs": true,
+	"C_Cpp.codeAnalysis.clangTidy.enabled": true,
+	"markdownlint.ignore": [".clang-tidy", ".clang-format", "settings.json"],
+	"antlr4.generation": {
+		"mode": "internal",
+		"listeners": false,
+		"visitors": true
+	},
+	"?cmake.languageSupport.dotnetPath": "请根据操作系统的种类进行修改,Linux：/usr/bin/dotnet,Mac：/usr/local/opt/dotnet@6/bin/dotnet,Windows：C:/Program Files/dotnet/dotnet.exe",
+	"cmake.languageSupport.dotnetPath": "/usr/bin/dotnet"
+}
