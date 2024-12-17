@@ -1,43 +1,18 @@
 # 环境构建
 
-编译原理实验的环境可采用Windows上用msys2环境、WSL2 + Ubuntu 22.04、虚拟机或者容器方式部署。
+强烈推荐在Windows 10或11上构建WSL2 + Ubuntu 22.04的开发与运行环境。
 
-建议在Windows上部署msys2环境，部署WSL2+Ubuntu 22.04的方式，也可以采用其它方式，根据自身情况选择。
+当然，如PC或者笔记本使用Linux系统或者Mac系统，建议用Docker Desktop + Ubuntu 22.04容器。
 
-## Win10或11上部署msys2环境
-
-### 下载msys2并安装
-
-从中科大的镜像源中下载安装 msys2，下载网址：<http://mirrors.ustc.edu.cn/msys2/distrib/msys2-x86_64-latest.exe>
-
-假定msys2安装在路径C:\LinuxEnv下，这样msys2的位置为：C:\LinuxEnv\msys64
-
-### 安装开发软件
-
-进入msys2的安装路径（C:\LinuxEnv\msys64）下，可以看到一个clang64.exe程序。双击执行 clang64.exe 程序会弹出终端窗口，
-可通过cd命令进入本文件所在的路径，假定路径为D:\compilerdevenv，要执行的命令为：
-
-```shell
-cd "D:\compilerdevenv"
-sh tools/msys2.sh
-```
-
-或者
-
-```shell
-cd "/D/compilerdevenv"
-sh tools/msys2.sh
-```
-
-## Win10或11上部署WSL2+Ubuntu 22.04
+## WSL2+Ubuntu 22.04
 
 ### 安装Windows Terminal
 
 建议从Microsoft Store中下载安装Windows Terminal。
 
-### 安装WSL2
+### 安装WSL
 
-在 Windows PowerShell 中以管理员身份运行下面命令：
+以管理员身份运行Windows Terminal后，运行下面命令：
 
 ```shell
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
@@ -46,9 +21,9 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 运行完成之后，请重启电脑完成安装。
 
-然后设置WSL发行版为2.0，启用虚拟机机制。
+## 配置WSL为2.0
 
-在 Windows PowerShell 中运行下面命令：
+运行Windows Terminal后，运行下面命令：
 
 ```shell
 wsl --set-default-version 2
@@ -56,25 +31,27 @@ wsl --set-default-version 2
 
 ### 安装Ubuntu 22.04
 
-在 Windows PowerShell 中执行下面的命令安装Ubuntu-22.04。
+运行Windows Terminal后，运行下面命令安装Ubuntu-22.04：
 
 ```shell
 wsl --install --distribution Ubuntu-22.04
 ```
 
-在下载安装完后会提示创建一个普通用户。这里为后续实验的方便，请设置用户名为code，密码根据自己情况设置。
+在下载安装完后会提示创建一个普通用户。
 
-最后会自动登录Ubuntu 22.04，请输入exit后退出Ubuntu，不过虚拟机仍在运行。
+这里为后续实验的方便，请设置用户名为code，密码根据自己情况设置。
+
+最后会自动登录Ubuntu 22.04，请输入exit后退出Ubuntu，但是虚拟机仍在运行。
 
 ### 以root用户进入Ubuntu并安装软件
 
-在 Windows PowerShell 中执行下面的命令以root用户进入ubuntu系统
+在Windows Terminal中执行下面的命令以root用户进入ubuntu系统
 
 ```shell
 wsl --user root --distribution Ubuntu-22.04 --cd ~
 ```
 
-在进入系统后执行下面的命令，实现ubuntu.sh脚本的下载与运行，安装与配置软件。
+在进入系统后，执行下面的命令后先下载ubuntu.sh脚本，然后进行软件的安装。
 
 ```shell
 wget -O ubuntu.sh http://10.69.45.39:30080/publicprojects/compile-exp01/-/raw/master/tools/ubuntu.sh
@@ -83,38 +60,123 @@ sh ubuntu.sh
 
 ### 以普通用户code进入ubuntu进行开发与测试
 
-在 Windows PowerShell 中执行下面的命令以code用户进入ubuntu系统
+在Windows Terminal 中执行下面的命令以code用户进入ubuntu系统
 
 ``` powershell
 wsl --user code --distribution Ubuntu-22.04 --cd ~
 ```
 
-## VMware/VirtualBox/Qemu 安装 Ubuntu 与软件安装
+## Docker Desktop + Ubuntu
 
-可通过 VMware/VirtualBox/Qemu 等虚拟机软件安装 Ubuntu 22.04系统，建议采用Server版。
+### 容器环境的建立
 
-下载网址：<https://mirrors.ustc.edu.cn/ubuntu-releases/22.04/ubuntu-22.04.4-live-server-amd64.iso>
+Windows系统一般选择安装Docker Desktop，其下载的网址为：
+<https://mirrors.aliyun.com/docker-toolbox/windows/docker-for-windows/stable/Docker%20Desktop%20Installer.exe>
 
-请注意创建普通用户名设置为code，密码自定。
+Linux系统建议安装docker-ce和docker-compose，请自行查询相关资料：
 
-以 root 用户进入系统Ubuntu 22.04后执行如下的指令：
+macOS系统下需要安装Docker Desktop，其下载的网址为：
+<https://mirrors.aliyun.com/docker-toolbox/mac/docker-for-mac/stable>
 
-```shell
-cd ~
-wget -O ubuntu.sh http://10.69.45.39:30080/publicprojects/compile-exp01/-/raw/master/tools/ubuntu.sh
-sh ubuntu.sh
-```
+然后根据mac系统的CPU选择合适的软件下载，新版的mac一般为ARM CPU，请选择arm64下的Docker.dmg，老版的mac一般为Intel CPU，请选择amd64下的Docker.dmg。
 
-请注意ubuntu.sh中的USER_NAME为安装ubuntu时一般用户名，默认值为code，请根据实际情况修改。
+有关Docker Desktop的帮助文档可参阅下面的网址：
 
-建议开启ssh的免密钥登录方式，也就是在Windows上创建密钥，然后加入到Ubuntu的
-
-## Docker Desktop 安装 Ubuntu 与软件安装
-
-可通过 Docker Desktop Installer 安装 Docker 运行环境，具体参考网址：
 <https://docs.docker.com/desktop/install/windows-install/>
 
-Docker 配置运行详细见 tools/docker.md 文件。
+## Docker Desktop的配置
+
+打开Docker Desktop设置 > Docker Engine。
+
+默认情况下配置如图所示：
+
+![DockerDesktop-Setting-Engine-Before](tools/pictures/DockerDesktop-Setting-Engine-Before.png)
+
+增加registry-mirrors键值，如有buildkit则修改buildkit的值为false，然后点击"Apply & restart"。
+
+具体的信息如下所示：
+
+```yaml
+{
+  "builder": {
+    "gc": {
+      "defaultKeepStorage": "20GB",
+      "enabled": true
+    }
+  },
+  "experimental": false,
+  "features": {
+    "buildkit": false
+  },
+  "registry-mirrors": [
+    "https://registry.docker-cn.com",
+    "https://docker.mirrors.ustc.edu.cn",
+    "http://hub-mirror.c.163.com"
+  ]
+}
+```
+
+![DockerDesktop-Setting-Engine-After](tools/pictures/DockerDesktop-Setting-Engine-After.png)
+
+由于网络的限制，不能直接从Docker的官方网站上下载容器，后续提供一个做好的容器，请导入后使用。
+
+## 下载Ubuntu镜像并配置环境
+
+在命令行界面进入tools目录下，然后执行如下的命令：
+
+```shell
+docker build -t ubuntu2204-dev .
+```
+
+在该镜像中会创建一个普通用户code，其密码为password，供开发时使用。
+
+## 创建容器并运行Ubuntu容器
+
+```shell
+docker run -id --restart unless-stopped --name ubuntu-compile --hostname ubuntu-compile ubuntu2204-dev
+```
+
+## VSCode联动
+
+若在打开本项目时推荐的插件已安装则不需要再次安装Dev Containers插件后，否则请安装。
+
+在通过vscode连接容器时，请务必要事先打开Docker Desktop并运行容器ubuntu2204-dev。
+
+可以连接到容器上进行软件开发。
+
+## 容器的其它命令，需要时查询
+
+## 进入Ubuntu容器查看
+
+```shell
+docker exec -it ubuntu-compile /bin/zsh
+```
+
+### 停止Ubuntu容器
+
+```shell
+docker stop ubuntu-compile
+```
+
+### 启动Ubuntu容器
+
+```shell
+docker start ubuntu-compile
+```
+
+### 重启Ubuntu容器
+
+也就是先停止后启动容器
+
+```shell
+docker restart ubuntu-compile
+```
+
+### 删除镜像
+
+```shell
+docker rmi ubuntu2204-dev
+```
 
 ## 下载git工具与tortoisegit
 
