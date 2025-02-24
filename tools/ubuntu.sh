@@ -1,7 +1,7 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 # 代理URL，必须最后含有字符/，没有时请设置为空，请注意有两处，后面还有一处
-PROXY_URL="https://proxy.201704.xyz/"
+PROXY_URL="https://scoop.201704.xyz/"
 
 # 请指定用户名
 USER_NAME=code

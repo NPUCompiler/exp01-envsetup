@@ -4,7 +4,7 @@
 JDK_NEED_INSTALL=ON
 
 # 代理URL，必须最后含有字符/，没有时请设置为空
-PROXY_URL="https://proxy.201704.xyz/"
+PROXY_URL="https://scoop.201704.xyz/"
 
 # 两种选择：基于gcc的底层运行库和基于llvm的底层运行库
 # 基于gcc的底层运行库选择mingw-w64-x86_64
