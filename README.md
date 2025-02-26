@@ -214,14 +214,14 @@ docker rmi ubuntu2204-dev
 
 请从官网下载 vscode 并安装，下载网址：<https://code.visualstudio.com/Download>
 
-## 克隆实验一代码与Vscode插件安装、配置
+## 克隆实验三与Vscode插件安装、配置
 
-通过git克隆<http://10.69.45.39:30080/publicprojects/calculator.git>的计算器代码。
+通过git克隆<https://github.com/NPUCompiler/exp03-minic-basic.git>的计算器代码。
 
 在命令行窗口或者资源窗口上右键克隆计算器实验的代码，主要是为了vscode上安装插件。
 
 ```shell
-git clone http://10.69.45.39:30080/publicprojects/calculator.git
+git clone git clone http://10.69.45.39:30080/publicprojects/calculator.git
 ```
 
 打开vscode后选择File -> Open Folder选择克隆代码所在的文件夹进行打开，不一会儿vscode会提示安装推荐的插件，选择安装即可。
