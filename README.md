@@ -53,14 +53,17 @@ wsl --user root --distribution Ubuntu-22.04 --cd ~
 
 在进入系统后，执行下面的命令后先下载ubuntu.sh脚本，然后进行软件的安装。
 
+请注意如创建的不是普通用户名不是code，需要修改/tmp/ubuntu.sh中的USER_NAME变量的值。
+
 ```shell
-wget -O ubuntu.sh http://10.69.45.39:30080/publicprojects/compile-exp01/-/raw/master/tools/ubuntu.sh
-sh ubuntu.sh
+cd ~
+wget -O /tmp/ubuntu.sh https://scoop.201704.xyz/https://raw.githubusercontent.com/NPUCompiler/exp01-envsetup/refs/heads/main/tools/ubuntu.sh
+sh /tmp/ubuntu.sh
 ```
 
 ### 以普通用户code进入ubuntu进行开发与测试
 
-在Windows Terminal 中执行下面的命令以code用户进入ubuntu系统
+在Windows Terminal 中执行下面的命令以code用户进入ubuntu系统。
 
 ``` powershell
 wsl --user code --distribution Ubuntu-22.04 --cd ~
@@ -71,14 +74,15 @@ wsl --user code --distribution Ubuntu-22.04 --cd ~
 ### 容器环境的建立
 
 Windows系统一般选择安装Docker Desktop，其下载的网址为：
+
 <https://mirrors.aliyun.com/docker-toolbox/windows/docker-for-windows/stable/Docker%20Desktop%20Installer.exe>
 
-Linux系统建议安装docker-ce和docker-compose，请自行查询相关资料：
+Linux系统建议安装docker-ce和docker-compose，请自行查询相关资料进行安装。
 
 macOS系统下需要安装Docker Desktop，其下载的网址为：
 <https://mirrors.aliyun.com/docker-toolbox/mac/docker-for-mac/stable>
 
-然后根据mac系统的CPU选择合适的软件下载，新版的mac一般为ARM CPU，请选择arm64下的Docker.dmg，老版的mac一般为Intel CPU，请选择amd64下的Docker.dmg。
+请根据mac系统的CPU选择合适的软件下载，新版的mac一般为ARM CPU，请选择arm64下的Docker.dmg，老版的mac一般为Intel CPU，请选择amd64下的Docker.dmg。
 
 有关Docker Desktop的帮助文档可参阅下面的网址：
 
@@ -110,19 +114,38 @@ macOS系统下需要安装Docker Desktop，其下载的网址为：
   },
   "registry-mirrors": [
     "https://registry.docker-cn.com",
-    "https://docker.mirrors.ustc.edu.cn",
-    "http://hub-mirror.c.163.com"
+    "https://cr.console.aliyun.com",
+    "https://mirror.ccs.tencentyun.com",
+    "https://docker.m.daocloud.io",
+    "https://docker.1panel.live",
   ]
 }
 ```
 
 ![DockerDesktop-Setting-Engine-After](tools/pictures/DockerDesktop-Setting-Engine-After.png)
 
-由于网络的限制，不能直接从Docker的官方网站上下载容器，后续提供一个做好的容器，请导入后使用。
+由于网络的限制，可能不能直接从Docker的官方网站上下载容器，请通过代理解决。
+
+## 安装Git和TortoiseGit工具
+
+下载Git for Windows工具，从中找取最新版下载，如v2.48.1版，然后安装。其下载地址：
+
+<https://registry.npmmirror.com/binary.html?path=git-for-windows/>
+
+下载TortoiseGit工具，并安装。下载地址：
+
+<https://tortoisegit.org/download/>
+
+补充说明：
+
+TortoiseGit是一款专为Windows系统设计的Git版本控制客户端工具，它为用户提供了直观、友好的图形界面，使得Git的操作更加容易理解和使用。
+无论是初学者还是有经验的开发人员，都可以借助TortoiseGit提高工作效率，更好地管理和维护代码库。
 
 ## 下载Ubuntu镜像并配置环境
 
-在命令行界面进入tools目录下，然后执行如下的命令：
+通过Git的命令行或者TortoiseGit克隆本实验的git。
+
+在命令行界面进入克隆的tools目录下，然后执行如下的命令：
 
 ```shell
 docker build -t ubuntu2204-dev .

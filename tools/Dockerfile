@@ -24,9 +24,9 @@ RUN apt-get update && \
 	apt-get install -y doxygen texlive-lang-chinese texlive-lang-english texlive-latex-extra texlive-science texlive-plain-generic
 
 # 安装ANTLR 4.12.0
-RUN wget -O /usr/local/bin/antlr-4.12.0-complete.jar https://proxy.201704.xyz/https://github.com/antlr/website-antlr4/blob/gh-pages/download/antlr-4.12.0-complete.jar && \
+RUN wget -O /usr/local/bin/antlr-4.12.0-complete.jar https://scoop.201704.xyz/https://github.com/antlr/website-antlr4/blob/gh-pages/download/antlr-4.12.0-complete.jar && \
 	chmod +x /usr/local/bin/antlr-4.12.0-complete.jar && \
-	wget -O ~/antlr4-cpp-runtime-4.12.0-source.zip https://proxy.201704.xyz/https://github.com/antlr/website-antlr4/blob/gh-pages/download/antlr4-cpp-runtime-4.12.0-source.zip && \
+	wget -O ~/antlr4-cpp-runtime-4.12.0-source.zip https://scoop.201704.xyz/https://github.com/antlr/website-antlr4/blob/gh-pages/download/antlr4-cpp-runtime-4.12.0-source.zip && \
 	unzip ~/antlr4-cpp-runtime-4.12.0-source.zip -d ~/antlr4-cpp-runtime-4.12.0-source && \
 	cd ~/antlr4-cpp-runtime-4.12.0-source && \
 	cmake -B build -S . -G Ninja -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Debug -DANTLR_BUILD_CPP_TESTS=OFF && \
@@ -37,11 +37,11 @@ RUN wget -O /usr/local/bin/antlr-4.12.0-complete.jar https://proxy.201704.xyz/ht
 RUN rm -rf /var/lib/apt/lists/*
 
 # 安装oh-my-zsh
-# 注意若代理git clone失败时，请去除https://proxy.201704.xyz/或者用国内gitee的网址加速下载
-RUN git clone https://proxy.201704.xyz/https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && \
+# 注意若代理git clone失败时，请去除https://scoop.201704.xyz/或者用国内gitee的网址加速下载
+RUN git clone https://scoop.201704.xyz/https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && \
 	cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc && \
-	git clone https://proxy.201704.xyz/https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \
-	git clone https://proxy.201704.xyz/https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && \
+	git clone https://scoop.201704.xyz/https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \
+	git clone https://scoop.201704.xyz/https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && \
 	sed -i 's/^plugins=(/plugins=(zsh-autosuggestions zsh-syntax-highlighting z /' ~/.zshrc && \
 	chsh -s /bin/zsh root
 
@@ -53,11 +53,11 @@ RUN useradd --create-home --no-log-init --shell /bin/zsh -G sudo code && \
 USER code
 
 # 安装oh-my-zsh
-# 注意若代理git clone失败时，请去除https://proxy.201704.xyz/或者用国内gitee的网址加速下载
-RUN git clone https://proxy.201704.xyz/https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && \
+# 注意若代理git clone失败时，请去除https://scoop.201704.xyz/或者用国内gitee的网址加速下载
+RUN git clone https://scoop.201704.xyz/https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && \
 	cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc && \
-	git clone https://proxy.201704.xyz/https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \
-	git clone https://proxy.201704.xyz/https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && \
+	git clone https://scoop.201704.xyz/https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \
+	git clone https://scoop.201704.xyz/https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && \
 	sed -i 's/^plugins=(/plugins=(zsh-autosuggestions zsh-syntax-highlighting z /' ~/.zshrc
 
 # 克隆代码
@@ -65,4 +65,4 @@ RUN git clone https://proxy.201704.xyz/https://github.com/robbyrussell/oh-my-zsh
 
 WORKDIR /home/code
 
-ENTRYPOINT /bin/zsh
+ENTRYPOINT ["/bin/zsh"]
