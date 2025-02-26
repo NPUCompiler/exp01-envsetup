@@ -131,15 +131,24 @@ macOS系统下需要安装Docker Desktop，其下载的网址为：
 下载Git for Windows工具，从中找取最新版下载，如v2.48.1版，然后安装。其下载地址：
 
 <https://registry.npmmirror.com/binary.html?path=git-for-windows/>
+<https://github.com/git-for-windows/git/releases>
 
 下载TortoiseGit工具，并安装。下载地址：
 
 <https://tortoisegit.org/download/>
 
+版本2.17.0.0的下载地址
+
+<https://scoop.201704.xyz/https://download.tortoisegit.org/tgit/2.17.0.0/TortoiseGit-2.17.0.2-64bit.msi>
+
 补充说明：
 
 TortoiseGit是一款专为Windows系统设计的Git版本控制客户端工具，它为用户提供了直观、友好的图形界面，使得Git的操作更加容易理解和使用。
 无论是初学者还是有经验的开发人员，都可以借助TortoiseGit提高工作效率，更好地管理和维护代码库。
+
+重启后，鼠标右键的菜单就会有git相关操作的菜单或者界面。
+
+注意：若不能下载，则删除网址的前缀：<https://scoop.201704.xyz/>，该网址为代理，加速下载。
 
 ## 下载Ubuntu镜像并配置环境
 
@@ -200,18 +209,6 @@ docker restart ubuntu-compile
 ```shell
 docker rmi ubuntu2204-dev
 ```
-
-## 下载git工具与tortoisegit
-
-从下面的网址下载Git for Windows工具然后安装。
-
-<https://proxy.201704.xyz/https://github.com/git-for-windows/git/releases/download/v2.44.0.windows.1/Git-2.44.0-64-bit.exe>
-
-从下面的网址下载tortoisegit，并安装。重启后，鼠标右键的菜单就会有git相关操作的菜单或者界面。
-
-网址：<https://proxy.201704.xyz/https://download.tortoisegit.org/tgit/2.15.0.0/TortoiseGit-2.15.0.0-64bit.msi>
-
-注意：若不能下载，则删除网址的前缀：<https://proxy.201704.xyz/>，该网址为代理，加速下载。
 
 ## vscode 下载安装与运行
 
