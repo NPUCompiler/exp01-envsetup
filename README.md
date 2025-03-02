@@ -2,7 +2,9 @@
 
 强烈推荐在Windows 10或11上构建WSL2 + Ubuntu 22.04的开发与运行环境。
 
-当然，如PC或者笔记本使用Linux系统或者Mac系统，建议用Docker Desktop + Ubuntu 22.04容器。
+如使用的PC或笔记本是Linux系统，则不用安装WSL和容器，直接安装相关软件即可。
+
+如使用的是Mac系统，建议用Docker Desktop + Ubuntu 22.04容器。
 
 ## WSL2+Ubuntu 22.04
 
@@ -42,6 +44,17 @@ wsl --install --distribution Ubuntu-22.04
 这里为后续实验的方便，请设置用户名为code，密码根据自己情况设置。
 
 最后会自动登录Ubuntu 22.04，请输入exit后退出Ubuntu，但是虚拟机仍在运行。
+
+**注意事项**
+
+如果出现网络限制等原因不能直接下载安装，请用PowerShell命令命令直接下载然后双击运行即可：
+
+```power
+Invoke-WebRequest -Uri https://aka.ms/wslubuntu2204 -OutFile Ubuntu-2204.appx -UseBasicParsing
+Add-AppxPackage .\Ubuntu-2204.appx
+```
+
+当然也可以借助其它下载工具加速下载，下载网址：https://aka.ms/wslubuntu2204，下载后的文件名类似为Ubuntu2204-221101.AppxBundle。
 
 ### 以root用户进入Ubuntu并安装软件
 
