@@ -21,12 +21,15 @@ RUN apt-get update && \
 	apt-get install -y gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf && \
 	apt-get install -y gcc-riscv64-linux-gnu g++-riscv64-linux-gnu && \
 	apt-get install -y qemu-user-static && \
-	apt-get install -y doxygen texlive-lang-chinese texlive-lang-english texlive-latex-extra texlive-science texlive-plain-generic
+	apt-get install -y doxygen
+
+# 安装texlive，默认不安装，需要时请打开选项，或者进入容器内执行如下的apt-get命令
+# RUN apt-get install -y texlive-lang-chinese texlive-lang-english texlive-latex-extra texlive-science texlive-plain-generic
 
 # 安装ANTLR 4.12.0
-RUN wget -O /usr/local/bin/antlr-4.12.0-complete.jar https://scoop.201704.xyz/https://github.com/antlr/website-antlr4/blob/gh-pages/download/antlr-4.12.0-complete.jar && \
+RUN wget -O /usr/local/bin/antlr-4.12.0-complete.jar https://scoop.201704.xyz/https://raw.githubusercontent.com/antlr/website-antlr4/refs/heads/gh-pages/download/antlr-4.12.0-complete.jar && \
 	chmod +x /usr/local/bin/antlr-4.12.0-complete.jar && \
-	wget -O ~/antlr4-cpp-runtime-4.12.0-source.zip https://scoop.201704.xyz/https://github.com/antlr/website-antlr4/blob/gh-pages/download/antlr4-cpp-runtime-4.12.0-source.zip && \
+	wget -O ~/antlr4-cpp-runtime-4.12.0-source.zip https://scoop.201704.xyz/https://raw.githubusercontent.com/antlr/website-antlr4/refs/heads/gh-pages/download/antlr4-cpp-runtime-4.12.0-source.zip && \
 	unzip ~/antlr4-cpp-runtime-4.12.0-source.zip -d ~/antlr4-cpp-runtime-4.12.0-source && \
 	cd ~/antlr4-cpp-runtime-4.12.0-source && \
 	cmake -B build -S . -G Ninja -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Debug -DANTLR_BUILD_CPP_TESTS=OFF && \
@@ -61,7 +64,7 @@ RUN git clone https://scoop.201704.xyz/https://github.com/robbyrussell/oh-my-zsh
 	sed -i 's/^plugins=(/plugins=(zsh-autosuggestions zsh-syntax-highlighting z /' ~/.zshrc
 
 # 克隆代码
-# RUN git clone http://10.69.45.39:30080/publicprojects/calculator.git /home/code/calculator
+# RUN git clone https://github.com/NPUCompiler/exp03-minic-basic.git /home/code/exp03-minic-basic
 
 WORKDIR /home/code
 

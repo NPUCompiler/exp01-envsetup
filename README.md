@@ -178,6 +178,11 @@ docker build -t ubuntu2204-dev .
 
 在该镜像中会创建一个普通用户code，其密码为password，供开发时使用。
 
+请注意：
+
+1. **目前为Dockerfile不自动安装texlive，需要时执行查看Dockerfile中的注释进行开启。**
+2. 如果开启了github加速或者代理，请删除Dockerfile文件中的https://scoop.201704.xyz/。
+
 ## 创建容器并运行Ubuntu容器
 
 ```shell
