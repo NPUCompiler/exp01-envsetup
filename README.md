@@ -86,20 +86,17 @@ wsl --user code --distribution Ubuntu-22.04 --cd ~
 
 ### 容器环境的建立
 
-Windows系统一般选择安装Docker Desktop，其下载的网址为：
+Windows系统下的下载网址为：
 
-<https://mirrors.aliyun.com/docker-toolbox/windows/docker-for-windows/stable/Docker%20Desktop%20Installer.exe>
+<https://docs.docker.com/desktop/setup/install/windows-install/>
+
+Mac系统下的下载网址：
+
+https://docs.docker.com/desktop/setup/install/mac-install/
 
 Linux系统建议安装docker-ce和docker-compose，请自行查询相关资料进行安装。
 
-macOS系统下需要安装Docker Desktop，其下载的网址为：
-<https://mirrors.aliyun.com/docker-toolbox/mac/docker-for-mac/stable>
-
 请根据mac系统的CPU选择合适的软件下载，新版的mac一般为ARM CPU，请选择arm64下的Docker.dmg，老版的mac一般为Intel CPU，请选择amd64下的Docker.dmg。
-
-有关Docker Desktop的帮助文档可参阅下面的网址：
-
-<https://docs.docker.com/desktop/install/windows-install/>
 
 ## Docker Desktop的配置
 
