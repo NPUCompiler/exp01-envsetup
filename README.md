@@ -6,6 +6,12 @@
 
 如使用的是Mac系统，建议用Docker Desktop + Ubuntu 22.04容器。
 
+**如果WSL和容器部署都不可行，请使用VMware或VirtualBox安装Ubuntu 22.04 Server虚拟机的方式。**
+
+**WSL、容器或虚拟机任何一种就可以，但在Windows系统上推荐用WSL安装，Mac系统推荐Docker Desktop，**
+
+**Linux系统直接使用即可。**
+
 ## WSL2+Ubuntu 22.04
 
 ### 安装Windows Terminal
@@ -226,12 +232,10 @@ docker rmi ubuntu2204-dev
 
 ## 克隆实验三与Vscode插件安装、配置
 
-通过git克隆<https://github.com/NPUCompiler/exp03-minic-basic.git>的计算器代码。
-
-在命令行窗口或者资源窗口上右键克隆计算器实验的代码，主要是为了vscode上安装插件。
+在命令行窗口或者资源窗口上右键克隆minic基本版的代码，主要是为了vscode上安装插件。
 
 ```shell
-git clone git clone http://10.69.45.39:30080/publicprojects/calculator.git
+git clone https://github.com/NPUCompiler/exp03-minic-basic.git
 ```
 
 打开vscode后选择File -> Open Folder选择克隆代码所在的文件夹进行打开，不一会儿vscode会提示安装推荐的插件，选择安装即可。
