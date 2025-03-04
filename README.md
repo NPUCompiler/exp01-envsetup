@@ -240,8 +240,10 @@ docker rmi ubuntu2204-dev
 在命令行窗口或者资源窗口上右键克隆minic基本版的代码，主要是为了vscode上安装插件。
 
 ```shell
-git clone https://github.com/NPUCompiler/exp03-minic-basic.git
+git clone https://scoop.201704.xyz/https://github.com/NPUCompiler/exp03-minic-basic.git
 ```
+
+https://scoop.201704.xyz/为加速下载github的代理，如有问题，可删除后利用加速器或代理进行克隆。
 
 打开vscode后选择File -> Open Folder选择克隆代码所在的文件夹进行打开，不一会儿vscode会提示安装推荐的插件，选择安装即可。
 
