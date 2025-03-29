@@ -1,7 +1,6 @@
 {
 	"recommendations": [
 		"aaron-bond.better-comments",
-		"aldijav.golangwithdidi",
 		"alefragnani.bookmarks",
 		"alexcodercorp.comments",
 		"batisteo.vscode-django",
@@ -69,7 +68,6 @@
 		"ms-vscode.remote-server",
 		"nhoizey.gremlins",
 		"njpwerner.autodocstring",
-		"octref.vetur",
 		"oderwat.indent-rainbow",
 		"pkief.material-icon-theme",
 		"premparihar.gotestexplorer",
@@ -86,7 +84,6 @@
 		"tamasfe.even-better-toml",
 		"techer.open-in-browser",
 		"timonwong.shellcheck",
-		"twxs.cmake",
 		"uctakeoff.vscode-counter",
 		"vincaslt.highlight-matching-tag",
 		"vscode-icons-team.vscode-icons",

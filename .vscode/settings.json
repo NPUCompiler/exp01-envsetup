@@ -21,8 +21,6 @@
 	"gitlens.gitCommands.skipConfirmations": ["fetch:command", "switch:command", "push:command"],
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.colorTheme": "Monokai",
-	"plantuml.server": "http://10.69.45.39:38880",
-	"plantuml.render": "PlantUMLServer",
 	"workbench.editorAssociations": {
 		"*.ipynb": "jupyter-notebook",
 		"*.pdf": "latex-workshop-pdf-hook"
@@ -102,21 +100,6 @@
 		"editor.tabSize": 4
 	},
 	"explorer.confirmDelete": false,
-	"terminal.integrated.profiles.windows": {
-		"clang64": {
-			"path": "C:/ToolsApp/msys64/msys2_shell.cmd",
-			"args": ["-defterm", "-clang64", "-no-start", "-here", "-shell", "zsh"]
-		},
-		"PowerShell": {
-			"source": "PowerShell",
-			"icon": "terminal-powershell"
-		},
-		"Command Prompt": {
-			"path": ["${env:windir}\\Sysnative\\cmd.exe", "${env:windir}\\System32\\cmd.exe"],
-			"args": [],
-			"icon": "terminal-cmd"
-		}
-	},
 	"terminal.integrated.defaultProfile.windows": "Command Prompt",
 	"terminal.integrated.enableMultiLinePasteWarning": "auto",
 	"terminal.external.osxExec": "iTerm.app",
